@@ -1,7 +1,11 @@
 # Parse-Docker
 :speedboat: Run the Open Source Parse Server in Docker. This Docker Image will combine a simple Express Server (with the Parse Express Router Module) and a MongoDB server into a little Pares alternative.
 
-For this image to be useful, you probably want to override/change `cloud/main.js` - it defines what exactly your private Parse alternative does. Right now, it just contains some example code taken straight from Facebook's example.
+```
+docker pull felixrieseberg/parse
+```
+
+For this image to be useful, you probably want to override/change `cloud/main.js` - it is supposed to hold your Parse Cloud Code. Right now, it just contains some example code taken straight from Facebook's example.
 
 ## Variables
 The container and the Express server accept three environment variables:
