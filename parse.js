@@ -15,7 +15,7 @@ const parse = new ParseServer({
 });
 
 // Serve the Parse API on the /parse URL prefix
-app.use('/parse', prase);
+app.use('/parse', parse);
 
 // Hello world
 app.get('/', (req, res) => {
