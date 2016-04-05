@@ -11,7 +11,8 @@ const parse = new ParseServer({
     cloud: '/usr/src/parse/cloud/main.js',
     appId: process.env.APP_ID,
     masterKey: process.env.MASTER_KEY,
-    fileKey: process.env.FILE_KEY
+    fileKey: process.env.FILE_KEY,
+    serverURL: 'http://localhost:1337/parse'
 });
 
 // Serve the Parse API on the /parse URL prefix

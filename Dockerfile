@@ -7,7 +7,9 @@ WORKDIR /usr/src/parse
 # Install MongoDB
 RUN apt-get update \
  && apt-get -y install mongodb
-CMD ["/usr/bin/mongod", "--config", "/etc/mongodb.conf"]
+
+RUN apt-get -y install supervisor
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 COPY package.json /usr/src/parse/
 RUN npm install
@@ -20,4 +22,4 @@ ENV FILE_KEY YourOptionalFileKey
 
 EXPOSE 8080 27017
 
-CMD [ "npm", "start" ]
+CMD ["/usr/bin/supervisord"]
